@@ -52,11 +52,14 @@ body {
 }
 
 /* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+.wordlist {
+  margin: 20px 0;
 }
-.marketing p + h4 {
+.wordlist p + h4 {
   margin-top: 28px;
+}
+.wordlist .list-group{
+  margin-bottom: 5px;
 }
 
 /* Responsive: Portrait tablets and up */

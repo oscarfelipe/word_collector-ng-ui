@@ -1,12 +1,34 @@
-<div class="jumbotron">
-  <h1>Que talca cauro chiko!</h1>
-  <p class="lead">
+<div class="panel panel-default">
+  <div class="panel-body">
 
-    Guardar unas words...en el word-collector
-  </p>
+   <form>
+     <div class="form-group pull-right">
+       <a class="btn btn-default btn-lg" href="#/word">
+         <span class="glyphicon glyphicon-plus"></span>
+       </a>
+
+
+       </button>
+     </div>
+     <div class="form-group">
+       <input type="text" class="form-control">
+     </div>
+
+
+   </form>
+
+  </div>
 
 </div>
 
-<div class="row marketing">
+<div class="row wordlist">
+
+  <div class="list-group" ng-repeat="word in words">
+
+    <a href="#" class="list-group-item">
+      {{word.title}}: {{word.definition}}
+    </a>
+
+  </div>
 
 </div>
