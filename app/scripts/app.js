@@ -17,6 +17,9 @@ angular
     'ngRoute',
     'ngSanitize'
   ])
+  .factory('WordsService',function($resource){
+      return $resource('http://localhost:8080/wc/words/:item')
+    })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -27,9 +30,9 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .when('/word',{
-          templateUrl: '../views/word.html',
-          controller:'AddCtrl'
+      .when('/addword',{
+          templateUrl: 'views/word.html',
+          controller:'AddWordController'
         })
       .otherwise({
         redirectTo: '/'
