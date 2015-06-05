@@ -8,16 +8,13 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function ($scope,$location) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.addWord = function(){
-      $location.path('/addwords');
-    };
-    $scope.words = [{title:"hund",definition:"perro"},{title:"kat",definition:"gato"},
-        {title:"blondine",definition:"rubia"}];
+  .controller('MainCtrl', function ($scope,$location,WordsService) {
+    $scope.words = WordsService.query(); // all the words from the server
+      console.log($scope.words);
+     //var kop = WordsService.get({item:"kop"});
+     // console.log(kop);
 
+    $scope.addWord = function(){
+      $location.path('/addword');
+    };
   });
