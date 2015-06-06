@@ -11,31 +11,41 @@ angular.module('clientApp')
     .controller('AddWordController', function ($scope,$http,$location) {
 
 
-        $scope.add = function(word){
-           //format my word into a Javascript Object
-            var myWord = {'word': {'title': word.title, 'language':'dk',
-                'definition':word.definition,'examples': word.examples}};
+        $scope.add = function(word) {
+            //format my word as a Javascript Object
+            var myWord = {
+                'word': {
+                    'title': word.title, 'language': 'dk',
+                    'definition': word.definition, 'examples': word.examples
+                }
+            };
 
-
+            // construct the request
             var req = {
                 method: 'PUT',
-                url:'http://localhost:8080/wc/words',
+                url: 'http://localhost:8080/wc/words',
                 headers: {
 
                     'Content-Type': 'application/json'
                 },
-                useXDomain : true,
+                useXDomain: true,
                 data: myWord
             };
-
+            // perform an XHR2 to the server
             $http(req)
                 .success(
-                    function(response) {
-                        console.log("parece que resultó " + JSON.stringify(response))
-                    });
+                function (response) {
+                    console.log(JSON.stringify(response));
+                    $location.path('#/')
+                })
+                .error(
+                    function(data,status) {
+                        console.log("error : " + JSON.stringify(data));
+                        console.log("error : " + JSON.stringify(status));
+                    }
 
+            );
 
-            console.log("holi");
 
         };
 
