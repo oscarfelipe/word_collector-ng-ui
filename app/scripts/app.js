@@ -34,6 +34,10 @@ angular
           templateUrl: 'views/word.html',
           controller:'AddWordController'
         })
+        .when('/updateword',{
+          templateUrl: 'views/updateword.html',
+          controller:'UpdateWordController'
+        })
       .otherwise({
         redirectTo: '/'
       });
