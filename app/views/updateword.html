@@ -3,7 +3,7 @@
 
         <form>
             <div class="form-group">
-                <input type="text" class="form-control" ng-model="word.title" placeholder="Word Name">
+                <input type="text" class="form-control" ng-model="word.title"  placeholder="Word Name">
             </div>
 
             <div class="form-group">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="form-group">
-                <textarea placeholder="Examples of use" ng-model="word.examples" class="form-control"  row="3"></textarea>
+                <textarea  class="form-control" ng-model="word.examples"  placeholder="Examples of use" row="3">{{word.examples}}</textarea>
             </div>
 
             <div class="form-group pull-right">
@@ -19,7 +19,7 @@
                     <span class="glyphicon glyphicon-home"></span>
                 </a>
 
-                <a type="button" class="btn btn-default btn-lg" ng-click="add(word)">
+                <a type="button" class="btn btn-default btn-lg" ng-click="doUpdate()">
                     <span class="glyphicon glyphicon-floppy-disk"></span>
                 </a>
 

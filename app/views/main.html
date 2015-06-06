@@ -23,9 +23,9 @@
 
 <div class="row wordlist">
 
-  <div class="list-group" ng-repeat="word in words">
+  <div class="list-group" ng-repeat="word in data.words">
 
-    <a href="#" class="list-group-item">
+    <a href="" class="list-group-item" ng-click="updateWord(word.title)">
       {{word.title}}: {{word.definition}}
     </a>
 
