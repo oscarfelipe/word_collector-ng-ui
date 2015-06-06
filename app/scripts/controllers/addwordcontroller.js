@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name clientApp.controller:AddWordController
  * @description
- * # MainCtrl
- * Controller of the clientApp
+ * # AddWordController
+ * Controller of the AddWord process
  */
 angular.module('clientApp')
     .controller('AddWordController', function ($scope,$http,$location) {
@@ -28,7 +28,7 @@ angular.module('clientApp')
 
                     'Content-Type': 'application/json'
                 },
-                useXDomain: true,
+
                 data: myWord
             };
             // perform an XHR2 to the server
