@@ -22,7 +22,7 @@ angular.module('clientApp')
 
             // construct the request
             var req = {
-                method: 'PUT',
+                method: 'POST',
                 url: 'http://localhost:8080/wc/words',
                 headers: {
 

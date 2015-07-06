@@ -16,8 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize'
-  ])
-  .factory('WordsService',function($resource){ // resource to get data
+  ])// resource to get data from word_collector REST API
+  .factory('WordsService',function($resource){
       return $resource('http://localhost:8080/wc/words/:item')
     })
   .factory('DataService',function(){ // service  to share data between controllers
@@ -25,10 +25,7 @@ angular
 
       return {
         getWordFromServer      : function() {return wordFromServer;},
-        setWordFromServer      : function(object) {wordFromServer = object;},
-        getWordFromServerName  : function() {return wordFromServer.word.name;},
-        setWordFromServerName  : function(value) {wordFromServer.word.name = value;}
-
+        setWordFromServer      : function(object) {wordFromServer = object;}
       }
   })
   .config(function ($routeProvider) {
